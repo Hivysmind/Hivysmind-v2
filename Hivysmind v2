@@ -24,11 +24,11 @@ local aimConnection = nil
 
 local playerGui = player:WaitForChild("PlayerGui")
 
-local oldGui = playerGui:FindFirstChild("PrototypeUI")
+local oldGui = playerGui:FindFirstChild("SchematicsBy4karma")
 if oldGui then oldGui:Destroy() end
 
 local screenGui = Instance.new("ScreenGui")
-screenGui.Name = "PrototypeUI"
+screenGui.Name = "SchematicsBy4karma"
 screenGui.ResetOnSpawn = false
 screenGui.Parent = playerGui
 
@@ -100,7 +100,7 @@ title.BackgroundTransparency = 1
 title.TextColor3 = Color3.new(1, 1, 1)
 title.TextSize = 17
 title.Font = Enum.Font.GothamBold
-title.Text = "Prototype"
+title.Text = "Schematics by 4karma"
 title.Parent = frame
 
 --------------------------------------------------
@@ -597,7 +597,7 @@ local function getGun(gunName)
 		ReplicatedStorage:FindFirstChild("EquipGun")
 
 	if not equipGun then
-		warn("[PrototypeUI] EquipGun not found")
+		warn("[Schematics by 4karma] EquipGun not found")
 		return
 	end
 
@@ -685,12 +685,16 @@ toggleButton.TextColor3 =
 
 toggleButton.TextSize = 20
 toggleButton.Font = Enum.Font.GothamBold
-toggleButton.Text = "☰"
+
+-- Changed from ☰ to Z
+toggleButton.Text = "Z"
+
 toggleButton.BorderSizePixel = 0
 toggleButton.Parent = screenGui
 
+-- Square corners instead of circular
 local toggleCorner = Instance.new("UICorner")
-toggleCorner.CornerRadius = UDim.new(1, 0)
+toggleCorner.CornerRadius = UDim.new(0, 6)
 toggleCorner.Parent = toggleButton
 
 toggleButton.MouseButton1Click:Connect(function()
@@ -703,4 +707,4 @@ end)
 
 updateESP()
 
-print("[PrototypeUI] Loaded successfully")
+print("[Schematics by 4karma] Loaded successfully")
